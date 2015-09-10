@@ -1,0 +1,23 @@
+T;Forest;Odisey;Green;350;0;0
+T;Plains;Odisey;White;332;0;0
+T;Mountain;Seventh;Red;337;0;0
+T;Swamp;Onslaught;Black;340;0;0
+T;Island;Odisey;Blue;338;0;0
+H;Temporal Fisure;Scourge;Blue;53;4;1;Return target permanent to its owner's hand, Storm;;
+H;Trickery Charm;Onslaught;Blue;119;0;1;Choose one - Target creature gains flying until end of turn, or target creature's type becomes the creature type of your choice;;
+H;Ixidor's Will;Onslaught;Blue;90;2;1;Counter target spell unless its controller pays 2 colorless mana for each wizard in play;"Some dreams should not come to be."
+C;Echo Tracer;Legions;Blue;37;2;1;2;2;When Echo Trancer is taped, return target creature to its owner's hand;;Wizard
+C;Stronghold Biologist;Nemesis;Blue;45;2;1;1;1;Pay 2 Islands, tap Stronghold Biologist and discard a card from your hand: Counter target creature spell;"He twists the laws of nature until they scream.";Spellshaper
+C;Disruptive Pitmage;Onslaught;Blue;81;2;1;1;1;Tap Disruptive Pitmage, counter target spell unless its controller pays 1 colorless mana;"Show weakness to hide your strenght.";Wizard
+H;Neblina;Septima;Green;245;0;1;Preven todo el daño de combate que se fuera a hacer este turno;;
+H;Wirewood Pride;Onslaught;Green;303;0;1;Target creature gets +x/+x until the end of turn, where x is the number of Elves in play;;
+H;Giant Growth;Sixth;Green;223;0;1;Target creature get +3/+3 until the end of turn;;
+C;Treetop Scout;Scourge;Green;130;0;1;1;1;Treetop Scout can't be blocked except by creatures with flying.;"At home among the swaying, supple branches of the treetops, some scouts live their entire lives never touching ground";Elf
+C;Elfos de Llanowar;Septima;Green;253;0;1;1;1;Gira Elfos de Llanowar, agrega un bosque a tu reserva de mana.;"Llanowar cubre mas de un millon de kilometros cuadrados, sin embargo, naide entra al bosque sin que los elfos lo sepan;Elfo
+C;Viridian Zealot;Eight;Green;90;0;2;2;1;Sacrifice Viriadian Zealot, destroy target artifact or enchantment.;"I will fight only the way nature intended - and nature intended us to win";Elf Warrior
+H;Tempest of Light;Mirriodin;White;28;2;1;Destroy all enchantments.;"This wolrd reeks of another's hand. Someone or something is defying the power of the gods and shaping this planet. I intend for it to stop."
+H;Gilded Light;Scourge;White;16;1;1;You can't be the target of spells or abilities this turn;"Whoever survives the first blow lives to land the second."
+H;Guilty COnscience;Scourge;White;17;0;1;Whenever enchanted creature deals damage, Guity Conscience deals that much damage to enchanted creature.;"Those who most feel guilt don't need to, while those who most need to feel guilt never do."
+C;Noble Templar;Scourge;White;19;5;1;3;6;Attacking dosen't cause Noble templar to tap.;;Cleric Soldier
+C;Daru Warchief;Scourge;White;6;2;2;1;1;Soldier spells you play cost 1 colorless mana to play, Soldiers you control get +1/+2.;"His victories speak for him";Soldier
+C;Aven Farseer;Scourge;White;3;1;1;1;1;Flying, Whenever a creature is taped, put a +1/+1 counter on Aven Farseer;"His enemies trickery and deceit only fuel his righteous anger";Bird Soldier

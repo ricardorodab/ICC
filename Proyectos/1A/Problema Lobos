@@ -1,0 +1,17 @@
+ Proyecto 1A: El misterio del lobo asesinado.
+
+Contexto.
+
+En el parque nacional del Valle del Asno Escandaloso existe un programa de reintroducción del lobo gris de las planicies (Canis lupus nubilus). Hasta la semana pasada se tenía una manada de 7 ejemplares encabezada por Sigurd, el lobo alfa de la manada. La manada se encuentra actualmente y desde hace tiempo cerca de la frontera oriental del parque, en donde colinda con una zona de explotación ganadera. Para mantener en observación a la manada, se le colocó a Sigurd un transmisor de radio que es captado por diversas estaciones de telemetría, situadas 300 metros fuera de la valla que delimita el parque hacia el sur. El lunes de la semana pasada fue hallado el cuerpo sin vida de Kumatz, el lobo omega (el de menor rango) de la manada. Se le encontró 3 Km en el interior de la zona ganadera, con un disparo de arma de fuego. Los ganaderos dicen que la manada ha estado incursionando en el territorio reservado para el ganado y que, en efecto, uno de ellos disparó sobre el lobo luego de descubrir a la manada rondando a sus animales. Los coordinadores del programa de reintroducción del lobo piensan que, como ha ocurrido en el pasado, el hecho fue cometido intencionalmente por los ganaderos para desacreditar al programa.
+Localización de las estaciones de telemetría
+
+Problema.
+
+Su misión, si deciden aceptarla, será fungir como peritos del caso y determinar si los ganaderos dicen o no la verdad. Deberán reconstruir el trayecto de la manada de lobos en sus excursiones de caza, durante toda la semana en que, supuestamente, incursionaron en la zona ganadera. Para ello se les proporcionarán los datos registrados en las dos estaciones de telemetría más cercanas a los sitios en los que se ha observado a la manada. Cada estación registra el ángulo en el que la intensidad de la señal emitida por el transmisor de Sigurd es mayor. Así cada estación entrega, en cada medición, el valor del ángulo (respecto al este) en cuya dirección se encuentra el lobo.
+
+
+Entrada: Un archivo de datos con dos columnas de datos numéricos separados por un tabulador. En la primera columna está el ángulo entregado por la estación 1, situada a 30 Km al oeste de la zona ganadera. En la segunda columna está el ángulo entregado por la estación 2, 20 Km al este de la estación 1. Ambos ángulos están medidos en radianes a partir de la dirección este. En cada renglón del archivo están las medidas tomadas por las estaciones casi simultáneamente.
+
+
+Salida: Se deben entregar las posiciones del lobo alfa (y por tanto de la manada) que resultan de aparear las medidas de ambas estaciones de telemetría. Las posiciones deberán estar dadas en un sistema de referencia basado en alguna de las dos estaciones. Se deben indicar también, en ese mismo sistema de referencia, las coordenadas máximas y mínimas alcanzadas por la manada durante la semana del incidente. Adicionalmente, sería de mucha utilidad determinar la localización aproximada de la madriguera donde la manada se reune a alimentar a los cachorros nacidos la primavera pasada.
+

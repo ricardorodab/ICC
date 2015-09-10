@@ -1,0 +1,18 @@
+Contexto.
+
+El triángulo de Sierpinski es un objeto fractal cuya construcción se define mediante un proceso iterativo. El triángulo de Sierpinski de generación cero es simplemente un tríangulo. El triángulo de generación 1 es el mismo triángulo anterior, pero al que se le ha quitado el triángulo medio resultado de unir los puntos medios del triángulo original, así que resulta ser un conjunto de tres triángulos, aquellos que quedaban en los vértices del original. En la generación 2 se procede a aplicar el mismo procedimiento a cada uno de estos tres triángulos, tratando a cada uno de ellos como el triángulo de Sierpinski de generación 0. El proceso de construcción continúa como se ha descrito.
+
+El triángulo de Sierpinski es lo que queda en el límite cuando el proceso de construcción se itera hasta el infinito.
+
+
+Problema.
+
+Hacer un programa que trace las aproximaciones del triángulo de Sierpinski.
+
+
+Entrada: El usuario del programa deberá proporcionar n, el número de generación deseada del proceso de construcción.
+
+
+Salida: La figura que constituye la n-ésima generación del triángulo de Sierpinski.
+
+

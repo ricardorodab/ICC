@@ -1,0 +1,92 @@
+ Proyecto 5A: Autómatas celulares.
+
+Contexto.
+
+Los autómatas celulares constituyen una de las herramientas de modelado más interesantes desde el punto de vista computacional. Son un modelo discreto en el que el tiempo avanza, también, discretamente. Están constituidos por una malla regular e infinita de celdas, en cada sitio de la malla, al que llamaremos celda, hay un valor real que determina el estado de la celda. Cada Celda está siempre en uno de un conjunto finito de posibles estados (de allí que un autómata celular sea un modelo discreto) y en cada paso temporal el estado de cada celda se ve afectado por el estado previo que poseía y por estado previo de cada uno de sus vecinos. Para determinar cómo afecta el estado previo de una celda y sus celdas vecinas al estado futuro de la celda se utiliza una función. Esta función es única y la misma para todas las celdas en todos los pasos de evolución del autómata, es decir, es una regla estacionaria.
+
+Precisando, un autómata celular está completamente determinado por:
+
+    Una malla formalmente infinita de celdas de la misma forma y tamaño.
+    Un conjunto finito de los posibles estados de cada celda.
+    Un conjunto de reglas que determinan el estado, en el siguiente paso temporal, de cada celda de la malla, en función de el estado que ella misma tenía en el estado previo y el estado que tenían sus celdas vecinas. 
+
+Por supuesto queda por determinar cuál es el concepto de vecindad. Existen dos modelos usuales para ello:
+
+    La vecindad de von Neumann. Dada una celda en la malla, las celdas en la vecindad de von Neumann de ella son: ella misma, la celda superior, la inferior, la de la derecha y la de la izquierda. Así pues la vecindad de von Neumann de la celda en cuestión es el conjunto de cinco celdas mencionadas.
+    La vecindad de Moore. Dada una celda en la malla, las celdas en la vecindad de Moore de ella son: ella misma, la celda superior izquierda, superior, superior derecha, la de la derecha, la de la izquierda, la inferior izquierda, la inferior y la inferior derecha. Así pues la vecindad de Moore de la celda en cuestión es el conjunto de nueve celdas mencionadas. 
+
+
+Vecindades usuales en autómatas celulares
+
+Otro problema que habría que resolver es el de la finitud de la malla en la implementación del modelo. En la vida real no es posible tener mallas infinitas en la implementación del modelo en una computadora, así que se debe determinar cuál es el comportamiento del autómata en la frontera, definir, de hecho, qué celdas son las vecinas de las que están en el borde de la malla. Existen en general dos opciones: (a) Hacer que todas las celdas en el borde siempre tengan valor cero y sirvan como "barda" más allá de la cual no hay cambio de estado, o bien (b) enrollar la malla pegando el extremo superior con el inferior y el derecho con el izquierdo, lo que topológicamente significa que la convertimos en un toro. Esto crea el efecto de condiciones de frontera cíclicas (wrap around).
+
+Problema.
+
+Su misión, si deciden aceptarla, es elaborar un programa que sea capaz de ejecutar modelos basados en autómatas celulares bidimensionales. De entrada fijaremos que las condiciones de frontera son cíclicas, como se describe arriba en la opción (b).
+
+Los modelos a implementar son los siguientes:
+
+    Modelo de propagación de epidemias estocástico.
+    Modelo de incendio forestal estocástico.
+    Modelo de terremoto. 
+
+Tal como se describieron en clase.
+
+Para el diseño se contempla hacer una clase abstracta AutomataCelular que implemente los métodos comunes a todos los modelos y después hacer clases derivadas que implementen las particularidades de cada uno de ellos.
+
+Entrada.
+
+La entrada debería ser entonces el número de generaciones que se desea que el autómata evolucione, el tamaño de la malla y posiblemente la especificación de la configuración inicial (si es que hay opciones) y parámetros particulares de cada autómata: probabilidades de contagio en el caso del modelo de epidemia, por ejemplo.
+
+Salida.
+
+La manifestación gráfica de la evolución del autómata. 
+
+MODELO INCENDIO FORESTAL: 
+
+ Incendio forestal
+Estados
+
+    Vacío. Es un sitio en el que no hay árbol. Valor = 0.
+    Árbol. Sitio en el que hay un árbol. Valor = 1.
+    En llamas. Sitio que se encuentra ardiendo. Valor = 3.
+
+Reglas
+
+    Vecindades de Moore.
+    Parámetros: probabilidad de que surja un árbol en sitio vacío = p; probabilidad de que un árbol NO se incendie si tiene vecinos incendiados (resistencia al fuego) = g; probabilidad de que un sitio sea atacado por fuego espontáneo = f; por tanto la probabilidad de que un sitio se incendie espontáneamente es f * (1 - g).
+    p, f y g están en [0, 1].
+    Un sitio vacío se convierte en un árbol con probabilidad p. Permanece vacío con probabilidad 1 - p.
+    Un sitio con un árbol y al menos un vecino en llamas, pasa a estar en llamas con probabilidad 1 - g.
+    Un sitio con un árbol sin vecinos en llamas, se incendia espontáneamente con probabilidad f * (1 - g)
+    Un sitio en llamas pasa a estado vacío.
+
+MODELO TERREMOTO:
+ Sismo
+Estados
+
+    Estable. Sitio cuya energía acumulada no es suficiente para romperlo. Valores en [0, 4).
+    Roto. Sitio que se ha roto liberando su energía a sus vecinos. Valor = 4.
+
+Reglas
+
+    Vecindad de von Neumann.
+    Un sitio estable, en cada paso temporal, incrementa su energía potencial en una cierta cantidad fija: delta.
+    Un sitio que alcanza el valor umbral 4, se rompe y regresa su energía a cero en el paso temporal siguiente.
+    Un sitio roto transfiere una unidad de energía a cada uno de sus vecinos de von Neumann.
+
+MODELO EPIDEMIA:
+
+ Propagación de epidemia
+Estados
+
+    Susceptible. Es decir, que está sano pero podría enfermar. Valor = 0.
+    Infeccioso. Que está enfermo y puede contagiar a otros la enfermedad. Valores en {1, ..., 7}.
+    Inmune. Que se ha recuperado de la enfermedad y por el momento no puede volver a contraerla. Valores en {8, ..., 16}.
+
+Reglas
+
+    Vecindades de von Neumann.
+    Una celda en estado susceptible pasa a infecciosa con probabilidad p, si tiene al menos un vecino infeccioso.
+    Si no tiene vecinos infecciosos permanece en estado susceptible.
+    Una celda en estado infeccioso o inmune sólo incrementa el valor almacenado en ella.

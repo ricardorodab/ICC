@@ -1,0 +1,11 @@
+0. $cat foo.txt | more 
+1. $touch man.txt
+2. $man man > man.txt
+3. $grep "whatis" man.txt
+4. $(cat foo.txt | more); (touch man.txt); (man man > man.txt); (grep "whatis" man.txt);
+5. $mkdir "#hola"; mkdir '$hola';
+6. $rmdir "#hola"; rmdir '$hola';
+7. $cp /etc/{passwd,group} /home
+8. $find /home s???.*
+9. $find /proc/1/ > proc_1.txt, 2> proc_1_errores.txt
+10. $(find / >dev/null)& -perm u=rwx

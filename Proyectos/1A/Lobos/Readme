@@ -1,0 +1,6 @@
+javac -classpath bin/geom.jar Lobos.java
+java -cp $CLASSPATH:bin/geom.jar Lobos 0 0 20 0 telemetria.dat > salida
+
+
+en gnuplot
+load 'grafica'

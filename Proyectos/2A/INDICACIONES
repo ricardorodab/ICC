@@ -1,0 +1,35 @@
+ Proyecto 2A: El método de cifrado de Vigenère.
+Contexto.
+
+Existen muy diversos mecanismos históricos de cifrado para comunicaciones secretas. Entre los históricamente más notables están los que reemplazan cada aparición de una letra por otra, siempre la misma para un mensaje dado. A estos se les conoce como métodos monoalfabéticos. Sólo se utiliza una permutación del alfabeto del mensaje para definir el reemplazo, cada letra se "disfraza" de otra y su disfraz no cambia a lo largo del mensaje.
+
+El defecto de estos métodos, que parecen ser muy seguros haciendo un análisis combinatorio, es que son fácilmente "rompibles" mediante un análisis de frecuencias. Cada idioma posee frecuencias características para cada una de las letras del alfabeto, así que si el criptoanalista hace una hipótesis plausible acerca del idioma en el que fue escrito el mensaje claro (sin cifrar) puede proceder a determinar los disfraces de las letras mediante análisis de frecuencias (Poe, E. A. "El escarabajo de oro" en Narraciones Extraordinarias).
+
+Así que para hacer más robusto el sistema se idearon métodos que cambian al disfraz de cada letra a lo largo del mensaje. A estos métodos se les denomina polialfabéticos. En 1586 Blaise de Vigenère diseñó uno de estos métodos, conocido como cifrado de Vigenère.
+
+El método consiste en escoger una palabra clave que servirá para decidir el reemplazo letra por letra, empatar la palabra clave (repetida cuanto sea necesario) con el mensaje claro y luego usar las parejas ordenadas de letras de la clave y letras del mensaje, para determinar la letra a colocar en el texto cifrado (véase un ejemplo).
+
+Para cifrar el método funciona así:
+
+    Se empatan las repeticiones necesarias de la palabra clave, letra por letra, con el texto claro. Esto forma parejas ordenadas (m[j], c[i]) (el j-ésimo caracter del mensaje con el i-ésimo caracter de la clave).
+    Se busca en la tabla de Vigenère el caracter E en el renglón encabezado por m[j] y la columna encabezada por c[i].
+    Se reemplaza a m[j] en el texto claro por E en el texto cifrado. 
+
+Para descifrar se aplica el método a la inversa:
+
+    Se empatan las repeticiones necesarias de la palabra clave, letra por letra, con el texto cifrado. Esto forma parejas ordenadas (e[j], c[i]) (el j-ésimo caracter del criptograma con el i-ésimo caracter de la clave).
+    Se busca en la tabla de Vigenère el caracter e[j] en el la columna encabezado por c[i].
+    Se reemplaza a e[j] en el texto cifrado por el caracter que encabeza el renglón donde fue encontrado. 
+
+
+Problema.
+
+Hacer un programa que cifre y descifre archivos de texto en español usando el método de Vigenère.
+
+
+Entrada: Un especificador de la operación a realizar, a saber: cifrar o descifrar, una palabra clave y el nombre de dos archivos de texto. El primer archivo contiene el texto sobre el que se realiza la operación especificada y el segundo en donde se escribirá la salida del proceso.
+
+
+Salida: En el segundo archivo de texto debe aparecer el texto que corresponde al contenido en el primer archivo, luego de cifrarlo o descifrarlo, según se especifique, usando la palabra clave dada en la entrada.
+
+Subpage (Ejemplo): https://sites.google.com/site/mxunamfcienciasjgcicc/homework/proyecto-2a/ejemplo-de-vigenere

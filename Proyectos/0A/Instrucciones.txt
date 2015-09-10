@@ -1,0 +1,20 @@
+ Proyecto 0A: Cálculo del área de un triángulo.
+
+Contexto.
+Cualesquiera tres puntos en el plano euclidiano o determinan un triángulo o bien son colineales. Sólo esos dos casos son posibles. Si suponemos que los puntos no son colineales entonces, ciertamente, dado que el triángulo es único, debe ser posible calcular su área.
+
+
+Problema.
+
+   Elaborar un programa que determine si, dadas las coordenadas de tres puntos en el plano euclidiano, estos corresponden a un triángulo y, en ese caso, calcule su área.
+
+
+Entrada: Como parte de la línea de llamada del programa desde el shell del sistema operativo se darán 6 (seis) números reales separados por espacios correspondiendo a las coordenadas X y Y de los vértices del supuesto triángulo. Es decir, la línea de llamada debe tener el formato:
+
+java AreaTriangulo <x1> <y1> <x2> <y2> <x3> <y3>
+
+
+Salida: La salida del programa puede ser alguna de las siguientes:
+
+    El mensaje "Los puntos dados no corresponden a un triángulo", si las coordenadas dadas corresponden a puntos colineales.
+    El mensaje "El área del triángulo formado por los puntos (x1, y1), (x2, y2) y (x3, y3) es: dddd.dddd" en otro caso.

@@ -1,0 +1,13 @@
+Integrantes del equipo y creadores:
+
+Rodríguez Abreu José Ricardo.
+Méndez Juárez Rocío.
+
+Instrucciones: 
+
+El programa AreaTriangulo sirve para calcular (perdonando el pleonasmo) el área del un triángulo dado 3 punto 
+(x, y) que pertenecen a los números reales.
+
+Para ejecutarlo sólo debes introducir desde la términal sin comillas "java AreaTriangulo x1 y1 x2 y2 x3 y3"
+y sustituyes "x1 y1 x2 y2 x3 y3" por valores que sean los vertices de tu tríangulo. Presiona "Intro" y 
+el programa te indicará el área del tríangulo o te motrará un mensaje si los puntos que distes no forman un triángulo.
