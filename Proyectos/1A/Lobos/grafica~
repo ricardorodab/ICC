@@ -1,8 +1,0 @@
-set grid
-set xlabel "Posición este"
-set ylabel "Posición norte"
-set arrow from 30,0 to 30,30 linecolor rgb "blue"
-set title "TRAYECTORIAS DEL LOBO ALFA DURANTE LA SEMANA"
-limite_norte(x) = 25
-limite_este(y) = 30
-plot [0:35] [0:30] 'salida.dat' title "Trayectoria"  with lines, limite_norte(x) title "Límite norte", limite_este(x) title "Límite parque nacional"

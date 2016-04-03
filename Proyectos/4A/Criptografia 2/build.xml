@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Criptografia" default="all" basedir="." xmlns:fx="javafx:com.sun.javafx.tools.ant">
+  <description>Crea, limpia, compila y optimiza el manejo del proyecto 4A.</description>
+  <import file="nbproject/build-impl.xml"/>
+  <property name="loginAda" value="jrodrigueza"/>
+  <target name="doc"  description="Crea la documnetación del código.">
+    <mkdir dir="doc"/>
+    <javadoc destdir="doc" author="true" version="true" charset="UTF-8">
+      <link href="http://docs.oracle.com/javase/6/docs/api/" />
+      <fileset file="src/*"/>
+    </javadoc>
+  </target>
+  
+  <target name="clean" description="Elimina los archivos temporales y los direcotiros build y doc.">
+    <delete>
+      <fileset file="src/*" defaultexcludes="no">
+	<exclude name="*.java"/>
+	<exclude name="*.xml"/>
+	<exclude name="*.txt" />
+      </fileset>
+      <fileset file="./*" defaultexcludes="no">
+	<exclude name="*.java"/>
+	<exclude name="*.xml"/>
+	<exclude name="*.txt"/>
+	<exclude name="manifest.mf"/>
+	<exclude name="*.png"/>
+      </fileset>
+    </delete>
+    <delete dir="build" />
+    <delete dir="test" />
+    <delete dir="doc" />
+    <delete dir="dist"/>
+    <delete file="${loginAda}.tar" />
+  </target>
+  
+  <target name="dist" depends="clean" description="Crea un archivo tar para enviar el código.">
+    <tar destfile="${loginAda}.tar" basedir="../"/>
+  </target>
+  
+  <target name="all" depends="clean,compile,doc" description="Compila y genera la documentación."/>
+</project>
